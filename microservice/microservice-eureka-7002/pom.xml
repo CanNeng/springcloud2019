@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.qn.springcloud</groupId>
+    <artifactId>microservice-eureka-7002</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>microservice-eureka-7002</name>
+    <description>eureka注册中心</description>
+
+    <parent>
+        <groupId>cn.qn.springcloud</groupId>
+        <artifactId>microservice</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <!--eureka-server服务端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <version>1.4.0.RELEASE</version>
+        </dependency>
+    </dependencies>
+
+</project>
