@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.qn.springcloud</groupId>
+    <artifactId>microservice-consumer-dept-80-ribbon</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>microservice-consumer-dept-80-ribbon</name>
+    <description>部门微服务消费者Module</description>
+
+    <!--父工程的依赖-->
+    <parent>
+        <groupId>cn.qn.springcloud</groupId>
+        <artifactId>microservice</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <!--子模块的个性化依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>cn.qn.springcloud</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 将服务注册进eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.0.RELEASE</version>
+        </dependency>
+        <!--Ribbon相关-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+            <version>1.3.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+            <version>2.1.0.RELEASE</version>
+        </dependency>
+
+        <!--Spring Boot Web组件-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

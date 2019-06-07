@@ -1,6 +1,6 @@
 package cn.qn.springcloud.service.interfac;
 
-import cn.qn.springcloud.msapi.entities.Dept;
+import cn.qn.springcloud.entities.Dept;
 
 import java.util.List;
 

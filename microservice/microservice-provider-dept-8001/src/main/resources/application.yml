@@ -3,7 +3,7 @@ server:
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: cn.qn.springcloud.msapi.entities
+  type-aliases-package: cn.qn.springcloud.entities
   mapper-locations: classpath:mybatis/mapper/**/*.xml
 
 spring:

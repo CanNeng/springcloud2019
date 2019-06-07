@@ -1,6 +1,6 @@
 package cn.qn.springcloud.controller;
 
-import cn.qn.springcloud.msapi.entities.Dept;
+import cn.qn.springcloud.entities.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +29,7 @@ public class DeptController_Consumer {
     }
 
     @RequestMapping(value = "/consumer/dept/list", method = {RequestMethod.GET})
-    public List<Dept> list(Dept dept) {
+    public List<Dept> list() {
         return restTemplate.getForObject(String.format("%s/dept/list",REST_URL_PREFIX), List.class);
     }
 

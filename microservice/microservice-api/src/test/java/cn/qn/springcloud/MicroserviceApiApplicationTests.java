@@ -1,4 +1,4 @@
-package cn.qn.springcloud.msapi;
+package cn.qn.springcloud;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

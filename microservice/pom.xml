@@ -18,7 +18,9 @@
         <module>microservice-provider-dept-8001</module>
         <module>microservice-provider-dept-8002</module>
         <module>microservice-provider-dept-8003</module>
-        <module>microservice-consumer-dept-80</module>
+        <module>microservice-consumer-dept-80-ribbon</module>
+        <module>microservice-consumer-dept-80-feign</module>
+
     </modules>
 
     <!--Spring Boot配置-->

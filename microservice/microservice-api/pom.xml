@@ -18,6 +18,12 @@
     </parent>
 
     <!--子模块的个性化依赖-->
-    <dependencies></dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.4.0.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>

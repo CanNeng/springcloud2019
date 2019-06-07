@@ -1,6 +1,6 @@
 package cn.qn.springcloud.controller;
 
-import cn.qn.springcloud.msapi.entities.Dept;
+import cn.qn.springcloud.entities.Dept;
 import cn.qn.springcloud.service.interfac.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

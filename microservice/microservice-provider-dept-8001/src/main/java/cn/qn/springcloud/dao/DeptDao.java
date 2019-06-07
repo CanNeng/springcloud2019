@@ -1,6 +1,6 @@
 package cn.qn.springcloud.dao;
 
-import cn.qn.springcloud.msapi.entities.Dept;
+import cn.qn.springcloud.entities.Dept;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

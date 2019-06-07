@@ -1,4 +1,4 @@
-package cn.qn.springcloud.msapi.entities;
+package cn.qn.springcloud.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

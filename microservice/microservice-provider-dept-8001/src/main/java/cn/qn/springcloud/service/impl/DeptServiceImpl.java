@@ -1,7 +1,7 @@
 package cn.qn.springcloud.service.impl;
 
 import cn.qn.springcloud.dao.DeptDao;
-import cn.qn.springcloud.msapi.entities.Dept;
+import cn.qn.springcloud.entities.Dept;
 import cn.qn.springcloud.service.interfac.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
