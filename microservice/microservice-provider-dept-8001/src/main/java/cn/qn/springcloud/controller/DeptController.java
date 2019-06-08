@@ -1,8 +1,8 @@
 package cn.qn.springcloud.controller;
 
 import cn.qn.springcloud.entities.Dept;
+import cn.qn.springcloud.entities.Result;
 import cn.qn.springcloud.service.interfac.DeptService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -25,16 +25,15 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod = "hystrix_Get")
-    public Object get(@PathVariable("id") Long id) {
-        Dept dept=deptService.findById(id);
-        if(dept==null) throw new RuntimeException(String.format("数据库中找不到id为%s的记录", id));
-        return dept;
+    public Result get(@PathVariable("id") Long id) {
+        Dept dept = deptService.findById(id);
+        if (dept == null) throw new RuntimeException(String.format("数据库中找不到id为%s的记录", id));
+        return Result.success(dept);
     }
 
     @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
-    public List<Dept> list() {
-        return deptService.findAll();
+    public Result list() {
+        return Result.success(deptService.findAll());
     }
 
     @RequestMapping(value = "/dept/discovery", method = RequestMethod.GET)
@@ -46,12 +45,6 @@ public class DeptController {
             System.out.println(String.format("serviceId:%s,host:%s,port:%s,url:%s", element.getServiceId(), element.getHost(), element.getPort(), element.getUri()));
         }
         return this.discoveryClient.getServices();
-    }
-
-    public Object hystrix_Get(@PathVariable("id") Long id) {
-        Dept dept=new Dept();
-        dept.setDeptNo(id).setDeptName(String.format("数据库中找不到id为%s的记录", id));
-        return dept;
     }
 
 }
