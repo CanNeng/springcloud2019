@@ -1,0 +1,29 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservice-zuul-gateway
+
+eureka:
+  client: #将客户端注册间eureka服务列表中
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: microservice-zuul-gateway-9257 #自定义服务名称信息
+    prefer-ip-address: true #访问路径可以显示IP地址
+
+
+zuul:
+  prefix: /qn #添加访问路径前缀
+  ignored-services: "*" #隐藏所有真实微服务名,不对外暴露
+  routes: #配置虚拟服务名,并对外暴露
+    mydept.serviceId: ms-dept
+    mydept.path: /mydept/**
+
+
+info: #点击eureka页面(127.0.0.1/7001)中模块的连接(http://192.168.0.105:8001/actuator/info)时所显示的信息
+  app.name: qn-microservice
+  company.name: www.qn.cn
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
